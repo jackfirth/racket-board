@@ -20,6 +20,9 @@
   have a particular color.
 }
 
+@defpredicates[[board? @board-tech{boards}]
+               [space? @space-tech{spaces}]]
+
 @defproc[(board-width [board board?]) exact-positive-integer?]{
   A generic procedure that returns the width of a given board.
 }

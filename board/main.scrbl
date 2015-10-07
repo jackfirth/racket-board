@@ -9,7 +9,9 @@
 This library includes functions and forms for working with
 @deftech[#:key "board"]{boards}. A board is a finite rectangular
 2d grid of @deftech[#:key "space"]{spaces}, any of which may
-or may not contain @deftech[#:key "piece"]{pieces}.
+or may not contain @deftech[#:key "piece"]{pieces}. A piece
+is any value, but specific boards may specify what pieces may
+be placed in their spaces.
 
 @author[@author+email["Jack Firth" "jackhfirth@gmail.com"]]
 

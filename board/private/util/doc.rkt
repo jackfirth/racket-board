@@ -1,19 +1,24 @@
-#lang sweet-exp racket/base
+#lang at-exp racket/base
 
-require
-  scribble/eval
-  scribble/manual
-  scribble-example
-  for-label board
-            racket/base
+(require racket/contract
+         scribble/eval
+         scribble/manual
+         scribble/decode
+         scribble-example
+         (for-label board
+                    racket/base
+                    racket/contract))
 
-provide
-  board-examples
-  racket-itemlist
-  reftech
-  for-label
-    all-from-out board
-                 racket/base
+(provide board-examples
+         racket-itemlist
+         defpredicates
+         reftech
+         board-tech
+         space-tech
+         (for-label
+          (all-from-out board
+                        racket/base
+                        racket/contract)))
 
 
 (define-examples-form board-examples board)
@@ -23,3 +28,15 @@ provide
 
 (define (reftech . content)
   (apply tech #:doc '(lib "scribblings/reference/reference.scrbl") content))
+
+(define-syntax-rule (defpredicates [pred-id domain-doc-content] ...)
+  (splice (list (defpredicate pred-id domain-doc-content) ...)))
+
+(define-syntax-rule (defpredicate pred-id domain-doc-content)
+  @defthing[#:kind "predicate" pred-id predicate/c]{Predicate recognizing @domain-doc-content})
+
+(define (board-tech . pre-content)
+  (apply tech #:key "board" pre-content))
+
+(define (space-tech . pre-content)
+  (apply tech #:key "space" pre-content))
