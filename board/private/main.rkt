@@ -1,1 +1,2 @@
-#lang racket/base
+#lang reprovide
+"base.rkt"
