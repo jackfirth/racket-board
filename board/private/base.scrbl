@@ -19,3 +19,11 @@
   to pieces, for instance a particular board may use spaces that each
   have a particular color.
 }
+
+@defproc[(board-width [board board?]) exact-positive-integer?]{
+  A generic procedure that returns the width of a given board.
+}
+
+@defproc[(board-height [board board?]) exact-positive-integer?]{
+  A generic procedure that returns the height of a given board.
+}
