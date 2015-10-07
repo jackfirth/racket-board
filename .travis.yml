@@ -18,4 +18,4 @@ script:
  - raco test $TRAVIS_BUILD_DIR
 
 after_success:
- - raco cover -f coveralls -d $TRAVIS_BUILD_DIR/coverage .
+ - raco cover -f coveralls -b -d $TRAVIS_BUILD_DIR/coverage .
