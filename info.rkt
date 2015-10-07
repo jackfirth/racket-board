@@ -21,6 +21,3 @@
     "racket-doc"
     "jack-scribble-example"
     "doc-coverage"))
-
-(define cover-include-paths
-  '(#rx"board/*.rkt"))
