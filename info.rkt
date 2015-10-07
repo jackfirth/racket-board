@@ -8,8 +8,15 @@
 
 
 (define deps
-  '("base"))
+  '("base"
+    "jack-scribble-example"
+    "sweet-exp"
+    "reprovide-lang"))
 
 
 (define build-deps
-  '())
+  '("cover"
+    "rackunit-lib"
+    "racket-doc"
+    "jack-scribble-example"
+    "doc-coverage"))
