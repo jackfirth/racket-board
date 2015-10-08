@@ -15,6 +15,7 @@
          reftech
          board-tech
          space-tech
+         piece-tech
          (for-label
           (all-from-out board
                         racket/base
@@ -40,3 +41,6 @@
 
 (define (space-tech . pre-content)
   (apply tech #:key "space" pre-content))
+
+(define (piece-tech . pre-content)
+  (apply tech #:key "piece" pre-content))

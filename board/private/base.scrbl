@@ -23,6 +23,13 @@
 @defpredicates[[board? @board-tech{boards}]
                [space? @space-tech{spaces}]]
 
+@defproc[(board/c [space-contract contract?]
+                  [piece-contract contract?])
+         contract?]{
+  Given contracts for a @space-tech{space} and a @piece-tech{piece},
+  returns a contract for a specific kind of @board-tech{board}.
+}
+
 @defproc[(board-width [board board?]) exact-positive-integer?]{
   A generic procedure that returns the width of a given board.
 }
