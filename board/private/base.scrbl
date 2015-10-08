@@ -7,7 +7,7 @@
 @defthing[gen:board any/c]{
   A @reftech{generic interface} that represents a @tech{board}. The
   @racket[gen:board] interface provides the following functions:
-  @racket-itemlist[board-ref board-set board-width board-height]
+  @racket-itemlist[board-space board-width board-height]
 }
 
 @defthing[gen:space any/c]{
@@ -30,10 +30,23 @@
   returns a contract for a specific kind of @board-tech{board}.
 }
 
+@defstruct*[cell ([row exact-nonnegative-integer?]
+                  [column exact-nonnegative-integer?])
+            #:transparent]{
+  Data structure representing a position on a @board-tech{board}.
+}
+
 @defproc[(board-width [board board?]) exact-positive-integer?]{
   A generic procedure that returns the width of a given board.
 }
 
 @defproc[(board-height [board board?]) exact-positive-integer?]{
   A generic procedure that returns the height of a given board.
+}
+
+@defproc[(board-space [board board?]
+                      [cell cell?])
+         space?]{
+  Returns the @space-tech{space} located at @racket[cell] on the
+  given @racket[board]
 }
