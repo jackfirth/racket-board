@@ -44,9 +44,16 @@
   A generic procedure that returns the height of a given board.
 }
 
-@defproc[(board-space [board board?]
-                      [cell cell?])
+@defproc[(board-space-ref [board board?]
+                          [cell cell?])
          space?]{
   Returns the @space-tech{space} located at @racket[cell] on the
   given @racket[board]
+}
+
+@defproc[(board-space-set [board board?]
+                          [cell cell?]
+                          [space space?])
+         board?]{
+  Returns a new @board-tech{board} which has @racket[space] at @racket[cell].
 }
